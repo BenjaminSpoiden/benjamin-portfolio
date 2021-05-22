@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_description_technologies",
+  "info": {
+    "name": "technologies",
+    "icon": "chart-pie"
+  },
+  "options": {},
+  "attributes": {
+    "technology": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

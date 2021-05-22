@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_description_job_descs",
+  "info": {
+    "name": "job_desc",
+    "icon": "book-open"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
