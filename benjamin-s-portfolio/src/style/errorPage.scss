@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Source+Sans+Pro:wght@200&display=swap');
+$font: "Helvetica Neue", 'Noto Sans TC', sans-serif;
+$pridi: 'Pridi', serif;
+$anon-pro: 'Anonymous Pro', monospace;
+$poppins: 'Poppins', sans-serif;
+$bg: rgb(19, 19, 19);
+$light-bg: rgb(25, 25, 25);
+
+:root {
+    --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+html, body {
+    box-sizing: border-box;
+    font-family: $font;
+    font-size: 16px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: $bg;
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(181, 211, 211);
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: $bg;
+}
+
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px 0px 10px;
+    font-weight: 600;
+    color: lightgrey;
+    line-height: 1.1;
+}
+
+main {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 0px 150px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 20px;
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+
+section {
+    margin: 0px auto;
+    max-width: 1000px;
+}
+
+.error-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: auto;
+
+    h1 {
+        font-family: $anon-pro;
+        font-weight: 900;
+        font-size: 12em;
+    }
+
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 4em;
+        color: lightgray;
+        font-weight: bold;
+        margin-top: -20px;
+    }
+}
+
+.error-btn {
+    
+    color: lightcyan;
+    background-color: transparent;
+    border: 1px solid lightcyan;
+    border-radius: 1px;
+    padding: 1.25rem 2rem;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.75px;
+    transition: ease 0.5s;
+
+    &:hover {
+        background-color: rgba($color: lightcyan, $alpha: 1);
+        color: black;
+    }
+}

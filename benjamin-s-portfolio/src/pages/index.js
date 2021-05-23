@@ -1,7 +1,6 @@
+import "../style/styles.scss"
 import React from "react"
 import { graphql } from "gatsby"
-import "../style/styles.scss"
-import { Navbar } from "../components/Navbar"
 import { Socials } from "../components/Socials"
 import { Hero } from "../components/Hero"
 import About from "../components/About"
@@ -9,26 +8,30 @@ import { WorkExperiences } from "../components/WorkExperiences"
 import { Services } from "../components/Services"
 import { Contact } from "../components/Contact"
 import { Projects } from "../components/Projects"
-import { Footer } from "../components/Footer"
+import { Layout } from "../components/Layout"
+import { SEO } from "../components/SEO"
 
 const IndexPage = ({ data }) => {
+
   
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-80px";
+  if(typeof window !== 'undefined') {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
     }
-    prevScrollpos = currentScrollPos;
   }
 
   const { allStrapiProjects: { nodes } } = data
 
   return (
-    <>
-      <Navbar />
+    <Layout>
+      <SEO desc="Portfolio project made using Gatsby and Strapi"/>
       <Socials />
       <div id="content">
         <main className="main-content">
@@ -51,9 +54,8 @@ const IndexPage = ({ data }) => {
             <Contact />
           </section>
         </main>
-        <Footer /> 
       </div>
-    </>
+    </Layout>
   )
 }
 

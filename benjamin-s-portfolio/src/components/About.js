@@ -4,20 +4,18 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const About = () => {
 
-
-    const pictureQuery = graphql`
+    const { file } = useStaticQuery(graphql`
         {
             file(relativePath: {eq: "me_photo.jpg"}) {
                 childImageSharp {
-                    gatsbyImageData(blurredOptions: {width: 10})
+                        gatsbyImageData
+                    }
                 }
-            }
         }
-    `
-
-    const { file } = useStaticQuery(pictureQuery) 
+    `)
+    
     const image = getImage(file)
-
+    
     return (
         <>
             <h2 className="heading">About Me</h2>
@@ -72,5 +70,4 @@ const About = () => {
         </>
     )
 }
-
 export default About

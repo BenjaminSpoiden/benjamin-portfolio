@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import { Project } from "./Project"
 
@@ -21,7 +20,7 @@ export const Projects = ({ projects, title, showMore }) => {
                 </ul>
             </div>
             <div className="btn">
-                {showMore && <button className="see-more-btn">See More</button>}
+                {showMore && <a href="/projects" className="see-more-btn">See More Projects &rarr;</a>}
             </div>
         </>
     )

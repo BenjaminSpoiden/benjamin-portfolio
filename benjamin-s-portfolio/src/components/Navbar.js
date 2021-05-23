@@ -31,7 +31,7 @@ export const Navbar = () => {
                     <div className="nav-links" >
                         <ol>
                             <li>
-                                <a onClick={() => scrollTo("#about")}>About</a>
+                                <a onClick={() => scrollTo("/#about")}>About</a>
                             </li>
                             <li>
                                 <a onClick={() => scrollTo("#services")} >What I do</a>
@@ -47,7 +47,7 @@ export const Navbar = () => {
                             </li>
                         </ol>
                         <div className="resume">
-                            <button className="resume-button">Resume</button>
+                            <a href="/benjamin_portfolio.pdf" className="resume-button">Resume</a>
                         </div>
                     </div>
                 </nav>

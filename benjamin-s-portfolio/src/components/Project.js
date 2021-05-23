@@ -9,7 +9,7 @@ export const Project = ({ project, index }) => {
     const staticImage = getImage(image.localFile)
 
     return (
-        <>
+        <div className="parent">
             <div className="project-content">
                 <div className="project-featured">
                     <p>Featured</p>
@@ -39,6 +39,6 @@ export const Project = ({ project, index }) => {
             <div className="project-image">
                 <GatsbyImage image={staticImage} alt="project-pic" />
             </div>
-        </>
+        </div>
     )
 }

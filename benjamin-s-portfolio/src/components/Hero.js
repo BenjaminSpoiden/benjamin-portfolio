@@ -19,7 +19,7 @@ export const Hero = () => {
                 </p>
             </div>
             <div style={{ marginTop:"70px" }}>
-                <a className="skills-link" onClick={() => scrollTo("#projects")}>See The Projects</a>
+                <button className="skills-link" onClick={() => scrollTo("#projects")}>See The Projects</button>
             </div>
         </div>
     )
