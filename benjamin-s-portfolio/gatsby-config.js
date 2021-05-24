@@ -43,29 +43,6 @@ module.exports = {
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`jobs`, `projects`],
       },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto Mono`,
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Roboto`,
-            subsets: [`latin`]
-          },
-          {
-            family: `Source Sans Pro`,
-            variants: [`400`]
-          }, 
-          {
-            family: `Poppins`,
-            variants: [`400`]
-          }
-        ],
-      },
     }
   ],
 };
