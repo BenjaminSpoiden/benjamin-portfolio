@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiProjects(sort: {fields: image___created_at, order: DESC}) {
+    allStrapiProjects(sort: {fields: image___created_at, order: DESC}, filter: {featured: {eq: true}}) {
       nodes {
         id
         strapiId

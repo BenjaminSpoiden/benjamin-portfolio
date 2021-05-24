@@ -63,7 +63,7 @@ const About = () => {
                 </div>
             <div>
                 <picture>
-                    <GatsbyImage image={image} alt="me" /> 
+                    <GatsbyImage className="picture" image={image} alt="me" /> 
                 </picture>
                 </div>
             </div>

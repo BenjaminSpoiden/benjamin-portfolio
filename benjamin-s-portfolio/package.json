@@ -17,6 +17,7 @@
   "dependencies": {
     "gatsby": "^3.4.1",
     "gatsby-plugin-image": "^1.5.0",
+    "gatsby-plugin-lodash": "^4.5.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^4.5.0",
     "gatsby-plugin-sass": "^4.5.0",
@@ -25,10 +26,12 @@
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-source-strapi": "^1.0.0",
     "gatsby-transformer-sharp": "^3.5.0",
+    "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
-    "sass": "^1.32.13"
+    "sass": "^1.32.13",
+    "scroll-to-element": "^2.0.3"
   }
 }

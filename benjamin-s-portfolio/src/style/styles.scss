@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     @media screen and (max-width: 786px) {
         display: none;
     }
+    
 }
 
 .logo {
@@ -108,10 +109,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.sidebar-icon {
+    display: none;
+    font-size: 22px;
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
 .nav-links {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+
+    @media screen and (max-width: 786px) {
+        display: none;
+    }
 
     ol {
         display: flex;
@@ -125,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     ol li {
-        margin: 0px 5px;
+        margin: 0px 10px;
         position: relative;
 
         a {
@@ -494,20 +507,6 @@ p {
         letter-spacing: 1.50px;
     }
 
-    img {
-        -webkit-filter: grayscale(100%); 
-        filter: grayscale(100%);
-        transition: ease-in-out 200ms;
-
-        max-width: 250px;
-        max-height: 250px;
-
-        &:hover {
-            -webkit-filter: none; 
-            filter: none;
-        }
-    }
-
     @media screen and (max-width: 1200px) {
         display: flex;
         flex-direction: column;
@@ -523,6 +522,19 @@ p {
     }
 }
 
+.picture {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    transition: ease-in-out 500ms;
+
+    max-width: 250px;
+    max-height: 250px;
+
+    &:hover {
+        -webkit-filter: none; 
+        filter: none;
+    }
+}
 
 .skill-list {
     display: grid;
@@ -700,6 +712,10 @@ p {
         }
     }
 
+}
+
+.job-button-div {
+    margin-top: 20px;
 }
 
 .job-display {

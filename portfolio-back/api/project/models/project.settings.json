@@ -44,6 +44,18 @@
       "repeatable": true,
       "component": "description.technologies",
       "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string"
     }
   }
 }

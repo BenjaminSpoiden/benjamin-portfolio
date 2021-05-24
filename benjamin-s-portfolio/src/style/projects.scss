@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Source+Sans+Pro:wght@200&display=swap');
+$font: "Helvetica Neue", 'Noto Sans TC', sans-serif;
+$pridi: 'Pridi', serif;
+$anon-pro: 'Anonymous Pro', monospace;
+$poppins: 'Poppins', sans-serif;
+$bg: rgb(19, 19, 19);
+$light-bg: rgb(25, 25, 25);
+
+:root {
+    --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+html, body {
+    box-sizing: border-box;
+    font-family: $font;
+    font-size: 16px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: $bg;
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(181, 211, 211);
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: $bg;
+}
+
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px 0px 10px;
+    font-weight: 600;
+    color: lightgrey;
+    line-height: 1.1;
+}
+
+.main-content {
+    margin-top: 100px;
+    counter-reset: section 0;
+}
+
+main {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 0px 150px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 20px;
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    h3 {
+        font-size: 4em;
+        padding-top: 20px;
+    }
+
+    p {
+        font-family: $anon-pro;
+        color: lightgreen;
+        font-weight: bold;
+        font-size: 1em;
+    }
+}
+
+.table-style {
+    width: 100%;
+    color: lightgray;
+    margin-top: 5rem;
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+}
+
+.table-row-stack {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+        margin: 25px 0px 10px;
+        padding: 0px;
+        list-style: none;
+
+        li {
+            margin: 0px 20px 5px 0px;
+            color: lightgray;
+            font-size: 13px;
+            font-family: $anon-pro;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.table-row-links {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 25px 0px 10px; 
+        padding: 0px;
+        li {
+            margin: 0px 10px 5px 0px;
+        }
+    }
+
+    a {
+        font-size: 18px;
+        color: rgb(112, 112, 112);
+        text-decoration: none;
+        transition: ease-in-out 200ms;
+        &:hover {
+            color: lightcyan
+        }
+    }
+}
+
+.table-row-year {
+    font-family: $anon-pro;
+    font-weight: bold;
+    color: lightgreen;
+}
+
+.table-row-title {
+    color: white;
+    font-weight: bold;
+    font-family: $font;
+}
+
+.table-placeholder {
+    display: flex;
+    justify-content: center;
+    
+    padding-top: 5em;
+    p{
+        font-family: $anon-pro;
+        letter-spacing: 1.75px;
+        font-size: 13px;
+        color: rgb(158, 158, 158);
+    }
+}
+
+.table-row-company {
+    color: rgb(158, 158, 158);
+    font-family: 'Poppins';
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.head-Title, .head-Technologies, .head-Links, .head-Year, .head-Company {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.75px;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(158, 158, 158);
+}
+
+.head-Technologies, .head-Company {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}

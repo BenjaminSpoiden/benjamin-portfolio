@@ -49,7 +49,7 @@ export const WorkExperiences = () => {
                         <h3>
                             {position}
                         </h3>
-                        <div>
+                        <div className="job-button-div" >
                             <a className="job-button" href={externalLink} >{company}</a>
                         </div>
                         <p className="date">

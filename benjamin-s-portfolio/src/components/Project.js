@@ -12,7 +12,7 @@ export const Project = ({ project, index }) => {
         <div className="parent">
             <div className="project-content">
                 <div className="project-featured">
-                    <p>Featured</p>
+                    <p>Highlighted</p>
                 </div>
                 <h3 className="project-heading">{title}</h3>
                 <div className="project-desc">

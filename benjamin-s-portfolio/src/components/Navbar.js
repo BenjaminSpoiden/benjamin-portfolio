@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react"
-import scrollTo from "gatsby-plugin-smoothscroll"
+import { HiOutlineMenuAlt3 } from "react-icons/hi"
+import { renderLinks } from "../utils/renderLinks"
+import { navbarData } from "../constant/links"
+
 
 export const Navbar = () => {
 
@@ -21,34 +24,23 @@ export const Navbar = () => {
     }, [])
 
     
-
     return (
         <>
             <header id="navbar" className={isNavbarScrolled ? "nav-header scroll" : "nav-header"}>
-                <nav className="nav" >
+                <nav className="nav">
                     <div className="logo">
+
                     </div>
-                    <div className="nav-links" >
+                    <div className="nav-links">
                         <ol>
-                            <li>
-                                <a onClick={() => scrollTo("/#about")}>About</a>
-                            </li>
-                            <li>
-                                <a onClick={() => scrollTo("#services")} >What I do</a>
-                            </li>
-                            <li>
-                                <a onClick={() => scrollTo("#projects")} >Projects</a>
-                            </li>
-                            <li>
-                                <a onClick={() => scrollTo("#experience")}>Work Experience</a>
-                            </li>
-                            <li>
-                                <a onClick={() => scrollTo("#contact")} >Contact</a>
-                            </li>
+                            {renderLinks(navbarData)}
                         </ol>
                         <div className="resume">
                             <a href="/benjamin_portfolio.pdf" className="resume-button">Resume</a>
                         </div>
+                    </div>
+                    <div className="sidebar-icon">
+                        <HiOutlineMenuAlt3 />
                     </div>
                 </nav>
             </header>
