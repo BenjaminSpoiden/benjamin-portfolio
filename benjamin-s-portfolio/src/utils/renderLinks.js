@@ -8,7 +8,7 @@ export const handleMenuClick = (l, e) => {
         const [anchorPath, anchor] = l.link.split('#');
         if (window.location.pathname === anchorPath) {
             e.preventDefault();
-            scrollToPosition(`#${anchor}`, -80);
+            scrollToPosition(`#${anchor}`, -100);
         }
     }
 }
@@ -21,7 +21,7 @@ export const renderLinks = (linkData) => {
                     key={l.link}
                     title={l.title}
                     to={l.link}
-                    onClick={e =>handleMenuClick(l, e)}
+                    onClick={e => handleMenuClick(l, e)}
                 >
                     {l.title}
                 </Link>

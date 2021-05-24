@@ -29,7 +29,7 @@ const Projects = ({ data }) => {
             <SEO title="Projects" desc="Portfolio project made using Gatsby and Strapi"/>
             <Socials />
             <div id="content">
-                <main className="main-content">
+                <main id="main" className="main-content">
                     <h3>Projects</h3>
                     <p>Here's a list of all the projects I made.</p>
                     {nodes.length !== 0 

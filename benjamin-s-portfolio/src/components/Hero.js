@@ -1,5 +1,6 @@
 import React from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import { handleMenuClick } from "../utils/renderLinks"
 
 export const Hero = () => {
     return (
@@ -19,7 +20,7 @@ export const Hero = () => {
                 </p>
             </div>
             <div style={{ marginTop:"70px" }}>
-                <button className="skills-link" onClick={() => scrollTo("#projects")}>See The Projects</button>
+                <button className="skills-link" onClick={(e) => handleMenuClick({link: "/#projects"}, e)}>See The Projects</button>
             </div>
         </div>
     )

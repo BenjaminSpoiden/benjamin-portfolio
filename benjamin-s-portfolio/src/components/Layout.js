@@ -2,13 +2,13 @@ import React from "react"
 import { Footer } from "./Footer"
 import { Navbar } from "./Navbar"
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, animate }) => {
 
     return (
-        <>
-            <Navbar />
+        <div>
+            <Navbar animate={animate} />
             {children}
             <Footer />
-        </>
+        </div>
     )
 }

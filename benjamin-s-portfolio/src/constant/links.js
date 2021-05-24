@@ -1,11 +1,11 @@
 export const navbarData = [
   {
     title: 'About',
-    link: '/#about',
+    link: '/#about'
   },
   {
     title: 'Services',
-    link: '/#services',
+    link: '/#services'
   },
   {
     title: 'Projects',
@@ -16,7 +16,7 @@ export const navbarData = [
     link: '/#experience'
   },
   {
-      title: 'Contact',
-      link: '/#contact'
+    title: 'Contact',
+    link: '/#contact'
   }
 ];

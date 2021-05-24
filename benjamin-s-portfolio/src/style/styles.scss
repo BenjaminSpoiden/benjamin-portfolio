@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Dynalight&family=Roboto&family=Source+Sans+Pro:wght@200&display=swap');
 $font: "Helvetica Neue", 'Noto Sans TC', sans-serif;
 $pridi: 'Pridi', serif;
 $anon-pro: 'Anonymous Pro', monospace;
@@ -23,6 +23,7 @@ html, body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     line-height: 1.3;
+        
 }
 
 body::-webkit-scrollbar {
@@ -71,6 +72,11 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.nav.animate {
+    animation: 3s ease 0.1s normal forwards 1 fadein;
+    
+}
+
 .nav-header.scroll {
     box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.3);
 }
@@ -85,12 +91,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     color: lightgray;
     z-index: 12;
-
-    @media screen and (max-width: 786px) {
-        display: none;
-    }
-    
 }
+
+
 
 .logo {
     display: flex;
@@ -100,11 +103,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 
     a {
-        font-weight: 700;
+        font-weight: bold;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0;
         letter-spacing: 1.5px;
-        color: #fff;
+        font-size: 28px;
+        font-family: 'Dynalight', cursive;
+        color: lightgray;
         text-transform: uppercase;
     }
 }
@@ -112,9 +117,27 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-icon {
     display: none;
     font-size: 22px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 830px) {
         display: flex;
     }
+}
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    margin-top: -100px;
+    background-color: $bg;
+    padding: 0 30px;
+    right: -100%;
+    z-index: 999;
+    transition: all ease-in 0.5s;
+}
+
+.sidebar.active {
+    right: 0%;
+    background-color: rgba($color: $bg, $alpha: 0.85);
+    backdrop-filter: blur(15px);
 }
 
 .nav-links {
@@ -122,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-align: center;
     align-items: center;
 
-    @media screen and (max-width: 786px) {
+    @media screen and (max-width: 830px) {
         display: none;
     }
 
@@ -182,7 +205,77 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
     }
-    
+}
+
+.sidebar-links {
+    display: none;
+    -webkit-box-align: center;
+    height: 100%;
+    margin-top: 60px;
+    align-items: center;
+
+    @media screen and (max-width: 830px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ol {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: start;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+
+    ol li {
+        margin: 20px 10px;
+        position: relative;
+
+        a {
+            margin: 20 0;
+            text-decoration: none;
+            letter-spacing: 1.75px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            text-align: left;
+            color: #fff;
+            &:last-child {
+                margin-right: 0px
+            }
+
+        &:hover {
+                &::after,
+                &::before {
+                    width: 100%;
+                    left: 0;
+                }
+                
+            }
+            
+            &::after,
+            &::before {
+                content: ''; 
+                position: absolute;
+                top: calc(100% + 5px);
+                width: 0;
+                right: 0;
+                height: 2px;
+            }
+            
+            &::before {
+                transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+            }
+            
+            &::after {
+                transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+                background: #fff;
+            }
+        }
+    }
 }
 
 .resume {
@@ -212,11 +305,17 @@ h1, h2, h3, h4, h5, h6 {
     right: auto;
     z-index: 10;
     color: lightcyan;
+    
 
     @media screen and (max-width: 768px) {
         display: none;
         position: none;
     }
+}
+
+.socials-pos-left.animate {
+    opacity: 0;
+    animation: 3s ease 0.7s normal forwards 1 fadeLeft;
 }
 
 .socials-pos-right {
@@ -233,6 +332,11 @@ h1, h2, h3, h4, h5, h6 {
     @media screen and (max-width: 768px) {
         display: none;
     }
+}
+
+.socials-pos-right.animate {
+    opacity: 0;
+    animation: 3s ease 0.7s normal forwards 1 fadeRight;
 }
 
 .social-list {
@@ -348,7 +452,7 @@ h1, h2, h3, h4, h5, h6 {
         content: "";
         display: block;
         width: 1px;
-        height: 100px;
+        height: 150px;
         margin: 0px auto;
         
         border: 1px dashed lightcyan;
@@ -365,6 +469,7 @@ main {
     max-width: 1600px;
     min-height: 100vh;
     padding: 0px 150px;
+    transition: filter ease-in 500ms;
 
     @media screen and (max-width: 768px) {
         padding: 0 20px;
@@ -381,6 +486,50 @@ section {
     max-width: 1000px;
 }
 
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeinDown {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .hero-display {
     display: flex;
     -webkit-box-pack: center;
@@ -393,6 +542,11 @@ section {
 
     h2, h3 {
        font-family: 'Poppins', sans-serif;
+       
+    }
+
+    h1 {
+        animation: 3s ease 0.1s normal forwards 1 fadein;
     }
 
 }
@@ -413,12 +567,19 @@ h3 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    color: rgb(155, 155, 155);
+    color: rgb(202, 202, 202);
 }
 
 .big-heading {
     margin: 0px;
+    opacity: 0;
     font-size: clamp(40px, 4vw, 60px);
+
+    animation: 3s ease 0.3s normal forwards 1 fadein;
+   
+    h3 {
+        color: rgb(231, 231, 231)
+    }
 
     @media screen and (max-width: 425px) {
         font-size: 30px;
@@ -432,7 +593,10 @@ h3 {
         color: lightgrey;
         text-align: justify;
         font-weight: 700;
+        opacity: 0;
         font-family: 'Source Sans Pro', sans-serif;
+        animation: 3s ease 0.5s normal forwards 1 fadein;
+        
     }
 }
 
@@ -460,6 +624,8 @@ p {
     text-transform: uppercase;
     font-weight: bold;
     transition: ease 0.5s;
+    opacity: 0;
+    animation: 3s ease 0.7s normal forwards 1 fadeinDown;
 
     &:hover {
         background-color: rgba($color: lightcyan, $alpha: 1);
@@ -779,6 +945,7 @@ p {
         }
 
     }
+    
 }
 
 .contact-display {

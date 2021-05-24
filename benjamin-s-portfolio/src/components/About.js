@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -13,17 +13,16 @@ const About = () => {
                 }
         }
     `)
+
+
     
     const image = getImage(file)
     
     return (
         <>
             <h2 className="heading">About Me</h2>
-            <div className="about-display">
+            <div className="about-display" >
                 <div>
-                    <p>
-                        Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
-                    </p>
                     <p>
                         Interested in new technologies and programming as well as problem solving, I decided to reorient myself in the software development industry because I believe that devices such as laptop and smartphones are occupying an increasingly important position in our lives. 
                         With a constant desire to learn, joining a company whose values are sharing and learning are the pillars of my professional project.

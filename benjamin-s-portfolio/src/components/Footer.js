@@ -3,7 +3,7 @@ import { SocialsList } from "./SocialsList"
 
 export const Footer = () => {
     return (
-        <footer>
+        <footer id="footer">
             <SocialsList />
             <p>
                 <div>Copyright © 2021 Benjamin Spoiden.</div>
